@@ -17,4 +17,4 @@ $ . build/envsetup.sh
 $ lunch aosp_device-userdebug
 
 # Build the code
-$ mka bacon -jX
+$ repo sync -f --force-sync --no-clone-bundle
