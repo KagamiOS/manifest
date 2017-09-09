@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Github remote -->
+  <remote name="github"
+          fetch="https://github.com/" />
+
+  <!-- Gitlab remote -->
+  <remote name="gitlab"
+          fetch="https://gitlab.com/" />
+
+  <!-- AOSP-O-Kenzo remote -->
+  <remote name="aosp-kenzo"
+          revision="oreo"
+          fetch="https://github.com/AOSP-O-Kenzo/" />
+
+  <!-- AOSP-Oreo remote -->
+  <remote name="aosp-oreo"
+          revision="oreo"
+          fetch="https://github.com/AOSPOreo/" />
+
+  <!-- general -->
+  <project path="build/make" name="build" remote="aosp-oreo" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/kati" name="android_build_kati" remote="aosp-kenzo" />
+  <project path="manifest" name="manifest" remote="aosp-oreo" />
+  <project path="bionic" name="android_bionic" remote="aosp-kenzo" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="aosp-kenzo" />
+
+  <!-- external -->
+  <project path="external/fuse" name="android_external_fuse" remote="aosp-kenzo" />
+  <project path="external/exfat" name="android_external_exfat" remote="aosp-kenzo" />
+  <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="aosp-kenzo" />
+  <project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="aosp-kenzo" />
+  <project path="external/libnfnetlink" name="android_external_libnfnetlink" remote="aosp-kenzo" />
+  <project path="external/libnetfilter_conntrack" name="android_external_libnetfilter_conntrack" remote="aosp-kenzo" />
+  <project path="external/selinux" name="AgentFabulous/android_oreo_bacon" remote="github" revision="external_selinux" />
+
+  <!-- system -->
+  <project path="system/bt" name="system_bt" remote="aosp-oreo" />
+  <project path="system/vold" name="android_system_vold" remote="aosp-kenzo" />
+  <project path="system/core" name="system_core" remote="aosp-oreo" />
+  <project path="system/sepolicy" name="android_system_sepolicy" remote="aosp-kenzo" />
+
+  <!-- sepolicy -->
+  <project path="device/qcom/sepolicy" name="android_device_qcom_sepolicy" remote="aosp-kenzo" />
+
+  <!-- frameworks -->
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="aosp-oreo"/>
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="aosp-kenzo" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="aosp-kenzo" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="aosp-kenzo" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="aosp-kenzo" />
+
+  <!-- hardware -->
+  <project path="hardware/qcom/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" revision="lineage-15.0-caf-8974" remote="github"/>
+  <project path="hardware/qcom/bt" name="hardware_qcom_bt" remote="aosp-oreo" />
+  <project path="hardware/qcom/display" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="lineage-15.0-caf-8974" remote="github"/>
+  <project path="hardware/qcom/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" revision="lineage-15.0-caf-8974" remote="github"/>
+  <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="aosp-kenzo" />
+  <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" remote="aosp-oreo" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="aosp-kenzo" />
+
+  <!-- packages -->
+  <project path="packages/apps/Snap" name="android_packages_apps_Snap" remote="aosp-kenzo" />
+  <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="aosp-kenzo" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="aosp-kenzo" />
+  <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="aosp-kenzo" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="aosp-kenzo" />
+  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" remote="aosp-kenzo" />
+
+  <!-- prebuilts and toolchains -->
+
+  <!-- vendor -->
+  <project path="vendor/qcom/opensource/fm" name="android_vendor_qcom_opensource_fm" remote="aosp-kenzo" />
+  <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" remote="aosp-kenzo" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw" remote="github" revision="lineage-15.0" />
+  <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="aosp-kenzo" />
+  <project path="vendor/aosp" name="android_vendor_aosp" remote="aosp-kenzo" />
+
+</manifest>
