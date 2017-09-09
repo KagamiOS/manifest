@@ -1,5 +1,4 @@
-
-AOSPOreo
+AOSPKAGAMI
 
 Sync
 
@@ -8,6 +7,7 @@ repo init -u https://github.com/AOSPOreo/manifest -b oreo
 
 # Sync
 repo sync -c -jx --force-sync --no-clone-bundle --no-tags
+
 Preparing to Build
 
 # Set up environment
