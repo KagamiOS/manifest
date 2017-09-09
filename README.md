@@ -10,7 +10,7 @@ repo init -u https://github.com/AOSPOreo/manifest -b oreo
 repo sync -c -jx --force-sync --no-clone-bundle --no-tags
 Preparing to Build
 
-# Set up environment
+# set up environment
 $ . build/envsetup.sh
 
 # Choose a target
